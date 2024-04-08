@@ -1,0 +1,231 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Nunito', sans-serif;
+    margin:-15px;
+    background-color: #f5f5f5;;
+}
+.container {
+    margin-top: 6px;
+    max-width: 1313px;
+}
+.title{
+    font-size: 60px;
+    color: #5167AE;
+    text-align: center;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+}
+header{
+    width: 100%;
+    height: 200px;
+    @media screen and (max-width: 70px) {
+        /* Estilos adicionales para cuando el ancho de la pantalla es menor o igual a 768px */
+        .header {
+            font-size: 25%; /* Por ejemplo, puedes reducir el tamaño de fuente */
+        }
+    }
+
+    background-image: linear-gradient(135deg, #000153 26%, #8b0000 95%);
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+#wave{
+    width: 100%;
+    bottom:0;
+    top: 31%;
+    position:-webkit-sticky;
+    position:absolute;
+    overflow: hidden;
+}
+header video{
+    margin: 0%;
+    width: 100%; /* Ajusta el ancho según sea necesario */
+    height: 114%; /* Ajusta la altura según sea necesario */
+    object-fit: cover; /* Escala el video para cubrir todo el contenedor manteniendo la relación de aspecto */
+    object-position: center; /* Centra el video */
+}
+.text-header{
+    display: flex;
+    height: 11rem;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 0;
+}
+.text-header h1{
+    font-size: 2rem;
+    font-weight: 400;
+    color: #ffffff;
+    position: absolute;
+    top: 13%;
+    text-align: cen ter;
+    margin: 0;
+    @media screen and (max-width: 50%) {
+        /* Estilos adicionales para cuando el ancho de la pantalla es menor o igual a 768px */
+        h1 {
+            font-size: 25%; /* Por ejemplo, puedes reducir el tamaño de fuente */
+        }
+    }
+}
+.text-header h2{
+    font-size: 200%;
+    font-weight: 100;
+    color: #ffffff;
+    position: absolute;
+    top: 37%;
+    text-align: center;
+    margin: 0;
+    @media screen and (font-size: 200%) {
+        /* Estilos adicionales para cuando el ancho de la pantalla es menor o igual a 768px */
+        h2 {
+            font-size: 25%; /* Por ejemplo, puedes reducir el tamaño de fuente */
+        }
+    }
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 767px) {
+    .title {
+      font-size: 2rem; /* Ajusta el tamaño de fuente para pantallas pequeñas */
+    }
+    header {
+      height: 20rem; /* Ajusta la altura del encabezado para pantallas pequeñas */
+    }
+    header video {
+      height: 65rem; /* Ajusta la altura del video para pantallas pequeñas */
+    }  
+    /* Agrega más estilos específicos para pantallas pequeñas aquí */
+}
+
+.table-wrapper {
+    background: #fff;
+    padding: 20px 25px;
+    margin: 30px auto;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.table-wrapper .btn {
+    float: right;
+    color: #cacaca;
+    background-color: #fff;
+    border-radius: 3px;
+    border: none;
+    outline: none !important;
+    margin-left: 10px;
+}
+.table-wrapper .btn:hover {
+    color: #333;
+    background: #f2f2f2;
+}
+.table-wrapper .btn.btn-primary {
+    color: #fff;
+    background-image: linear-gradient(90deg, #21243e 7%, #230097 90%);
+}
+.table-wrapper .btn.btn-primary:hover {
+    background-image: linear-gradient(90deg, #21243e 7%, #230097 90%);
+}
+.table-title .btn {
+    font-size: 13px;
+    border: none;
+}
+.table-title .btn i {
+    float: left;
+    font-size: 21px;
+    margin-right: 5px;
+}
+.table-title .btn span {
+    float: left;
+    margin-top: 2px;
+}
+.table-title {
+    color: #fff;
+    background-image: linear-gradient(90deg, #21243e 7%, #230097 90%);
+    padding: 10px 25px;
+    margin: -20px -25px 10px;
+    border-radius: 3px 3px 0 0;
+}
+.table-title h2 {
+    margin: 5px 0 0;
+    font-size: 24px;
+}
+.show-entries select.form-control {        
+    width: 80px;
+    margin: 0 5px;
+}
+.table-filter .filter-group {
+    float:left;
+    margin-left: 15px;
+}
+.table-filter input, .table-filter select {
+    height: 34px;
+    border-radius: 3px;
+    border-color: #ddd;
+    box-shadow: none;
+}
+.table-filter {
+    padding: 5px 0 15px;
+    border-bottom: 1px solid #e9e9e9;
+    margin-bottom: 5px;
+}
+.table-filter .btn {
+    height: 34px;
+}
+.table-filter label {
+    font-weight: normal;
+    margin-left: 10px;
+}
+.table-filter select, .table-filter input {
+    display: inline-block;
+    margin-left: 5px;
+}
+.table-filter input {
+    width: 200px;
+    display: inline-block;
+}
+.filter-group select.form-control {
+    width: 300px;
+}
+.filter-icon {
+    float: right;
+    margin-top: 7px;
+}
+.filter-icon i {
+    font-size: 18px;
+    opacity: 0.7;
+}
+table.table tr th, table.table tr td {
+    border-color: #e9e9e9;
+    padding: 12px 15px;
+    vertical-align: middle;
+}
+table.table tr th:first-child {
+    width: 60px;
+}
+table.table tr th:last-child {
+    width: 80px;
+}
+table.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #fcfcfc;
+}
+table.table-striped.table-hover tbody tr:hover {
+    background: #f5f5f5;
+}
+table {
+    width: 100%;
+}
+thead{
+    background-image: linear-gradient(90deg, #21243e 7%, #230097 90%); /* Fondo celeste para encabezados */
+    color: #e6e6e6; /* Texto blanco para encabezados */
+}
+#form-he{
+    background-image: linear-gradient(92deg, #1d2151 60%, #863e3e 100%);
+    color: #cacaca;
+}
+
+
+
