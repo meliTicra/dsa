@@ -3,16 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Procedencia; // Asegúrate de importar el modelo correcto
+use App\Models\procedencia; // Asegúrate de importar el modelo correcto
 
 class ProcedenciaController extends Controller
 {
     // Mostrar todas las carreras y facultades
-    public function index()
+    
+    public function create()
     {
-        $procedencias = Procedencia::all(); // Recupera todas las carreras y facultades de la base de datos
-
-        return response()->json($procedencias);
+        $procedencia = procedencia::all();
+        return view('formulario', ['procedencia' => $procedencia]);
     }
 
     // Otros métodos del controlador, como store, update, delete, etc., según sea necesario

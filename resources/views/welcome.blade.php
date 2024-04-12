@@ -214,6 +214,12 @@
                                 <div class="mb-3">
                                     <label for="procedencia" class="form-label">Procedencia:</label>
                                     <input type="text" class="form-control" id="procedencia" name="procedencia" required>
+                                    <select name="procedencia">
+                                        @foreach($procedencia as $procedencia)
+                                            <option value="{{ $procedencia->id_procedencia }}">{{ $procedencia->nombre_procedencia }}</option>
+                                        @endforeach
+                                    </select>
+
                                 </div>
                                 <div class="mb-3">
                                     <label for="detalle" class="form-label">Detalle:</label>

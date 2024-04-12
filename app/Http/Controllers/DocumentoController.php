@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Documento;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Models\procedencia; // Asegúrate de importar el modelo adecuado
 
 
 class DocumentoController extends Controller
@@ -18,7 +19,8 @@ class DocumentoController extends Controller
     // Mostrar el formulario para crear un nuevo documento
     public function create()
     {
-        // Este método podría no ser necesario en una API
+        $procedencia = procedencia::all(); // Suponiendo que tienes un modelo Procedencia
+        return view('procedencia', ['procedencia' => $procedencia]);
     }
 
     // Almacenar un nuevo documento
@@ -28,19 +30,20 @@ class DocumentoController extends Controller
         $rules = [
             'nro' => 'required',
             'fecha' => 'required|date',
-            'procedencia' => 'required|exists:procedencia,id', // Asumiendo que la tabla se llama "procedencias"
+            'procedencia' => 'required|exists:procedencia,nombre_procedencia', // Asumiendo que la tabla se llama "procedencia"
             'nroCarta' => 'required', // Ajustado al nombre del campo en el formulario
             'detalle' => 'required',
             'imagen' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validación de la imagen
         ];
-
+    
         // Definir mensajes de error personalizados
         $messages = [
-            'id_procedencia.exists' => 'El id_procedencia especificado no existe en la tabla procedencia.',
+            'procedencia.exists' => 'La procedencia especificada no existe en la tabla procedencia.',
         ];
-
+    
         // Validar los datos de entrada
         $validator = Validator::make($request->all(), $rules, $messages);
+    
 
         // Si la validación falla, devolver errores
         if ($validator->fails()) {
@@ -64,7 +67,7 @@ class DocumentoController extends Controller
         $documento = new Documento();
         $documento->nro = $request->nro;
         $documento->fecha = $request->fecha;
-        $documento->procedencia_id = $request->procedencia; // Asumiendo que hay una relación con la tabla "procedencias"
+        $documento->procedencia_id = $request->procedencia; // Asumiendo que hay una relación con la tabla "procedencia"
         $documento->nro_carta = $request->nroCarta;
         $documento->detalle = $request->detalle;
         

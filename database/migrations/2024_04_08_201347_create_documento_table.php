@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class DocumentoTable extends Migration
+class CreateDocumentoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,15 +14,15 @@ class DocumentoTable extends Migration
     public function up()
     {
         Schema::create('documento', function (Blueprint $table) {
-            $table->id('id_documento');
+            $table->id();
             $table->timestamps();
-            $table->string('nombre-procedencia');
+            $table->string('nombre_procedencia'); // Cambia a unsignedBigInteger
             $table->string('numero_carta_o_prov');
             $table->text('detalle');
-            $table->string('imagen')->nullable(); // Columna para la ruta de la imagen
             
             // Definir la restricción de clave foránea
-            $table->foreign('nombre-procedencia')->references('id')->on('procedencia');
+            $table->foreign('nombre_procedencia')->references('nombre_procedencia')->on('procedencia');
+
         });
     }
 

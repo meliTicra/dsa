@@ -3,8 +3,9 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Procedencia; // Asegúrate de importar el modelo adecuado
 
-class ProcedenciaTable extends Migration
+class CreateProcedenciaTable extends Migration
 
 
 {
@@ -15,11 +16,10 @@ class ProcedenciaTable extends Migration
      */
     public function up()
     {
+        //carreras, Facultades, otros
         Schema::create('procedencia', function (Blueprint $table) {
-            $table->id('id_procedencia');
-            $table->string('nombre-procedencia');
-            $table->string('prov');
-            $table->timestamps();
+            $table->bigIncrements('id');
+            $table->string('nombre_procedencia')->unique(); // Agregar restricción unique
         });
     }
 

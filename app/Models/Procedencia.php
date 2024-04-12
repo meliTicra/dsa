@@ -10,6 +10,7 @@ class Procedencia extends Model
     use HasFactory;
     // Modelo Procedencia
     public function documento(){
+        
         return $this->hasMany(Documento::class);
     }
 }
