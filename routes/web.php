@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DocumentoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,11 +14,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/buscador', function () {
+    return view('layouts.buscador');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-use App\Http\Controllers\DocumentoController;
+Route::get('/tabla', function () {
+    return view('layouts.tabla');
+});
+
+Route::get('/forulario', function () {
+    return view('layouts.formulario');
+});
+
 
 Route::resource('documento', DocumentoController::class);
 

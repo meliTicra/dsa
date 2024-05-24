@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\RutaDestinoModel;
 use Illuminate\Http\Request;
 
-class ruta_destino extends Controller
+class RutaDestinoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,8 @@ class ruta_destino extends Controller
      */
     public function index()
     {
-        //
+        $rutasDestino = RutaDestinoModel::all();
+        return view('rutas.index', compact('rutasDestino'));
     }
 
     /**
@@ -40,10 +42,10 @@ class ruta_destino extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\RutaDestinoModel  $rutaDestinoModel
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(RutaDestinoModel $rutaDestinoModel)
     {
         //
     }
@@ -51,10 +53,10 @@ class ruta_destino extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\RutaDestinoModel  $rutaDestinoModel
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(RutaDestinoModel $rutaDestinoModel)
     {
         //
     }
@@ -63,10 +65,10 @@ class ruta_destino extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\RutaDestinoModel  $rutaDestinoModel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, RutaDestinoModel $rutaDestinoModel)
     {
         //
     }
@@ -74,10 +76,10 @@ class ruta_destino extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\RutaDestinoModel  $rutaDestinoModel
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(RutaDestinoModel $rutaDestinoModel)
     {
         //
     }
